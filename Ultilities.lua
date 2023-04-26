@@ -76,3 +76,5 @@ function printf(v)
     end
     printAll(v)
 end
+local hi = {}
+hi:map()
