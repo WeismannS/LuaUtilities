@@ -29,3 +29,45 @@ printf(<T>)  **--Checks if argument if table and and will print all descendants*
 
 Contributions are always very welcome!
 
+
+
+## Usage/Examples
+
+```lua
+local users = T({
+     {
+        name = "john",
+        age = 23
+    },
+     {
+        name = "maria",
+        age = 20
+    },
+     {
+        name = "Nadiah",
+        age = 25
+    },
+     {
+        name = "Introvert",
+        age = 16
+    },
+    {
+        name = "Alex",
+        age = 17
+    }
+})
+local minor = users:find(function(user)
+ return user.age < 18
+end)
+local notAllowedUsers = users:filter(function(e)
+     return e.age< 18
+end)
+local onlyAdults = users:map(function(e)
+    if e.age<18 then return nil end
+    return e
+end)
+
+printf(onlyAdults)
+
+```
+
