@@ -1,3 +1,8 @@
+# Lua Utilities
+
+Collection of Functions that Lua lack, implemented from javascript, Python..etc...
+
+Adds a Metatable that implements 
 ## Functions
   ### Table
   To not overwrite any methods of the `table` object, This Library creates a metatable so the only way to use these functions is to
@@ -15,4 +20,9 @@
 ### Global
 printf(<T>)  **--Checks if argument if table and and will print all descendants** 
 (not the best implemenation yet, it's WIP)
-###
+
+## Contributing
+
+Contributions are always very welcome!
+
+
