@@ -104,3 +104,12 @@ function printf(v)
     printAll(v)
 end
 
+function util.length(self)
+      local count = 0    
+      for i,v in pairs(self) do
+        count = count+1
+      end
+      return count
+end
+
+
