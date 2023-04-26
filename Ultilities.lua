@@ -25,7 +25,7 @@ function util.concat(self,...)
     return newT
 end
 
-function util.forEach(self,func)
+function util.foreach(self,func)
     for i,v in pairs(self) do
         func(i,v) 
     end
@@ -56,6 +56,22 @@ function util.filter(self,func)
     end
     return newT
 end
+
+function util.values(self,func)
+    local newT = T{}
+    function loop(t)
+        for i,v in pairs(t) do
+            if type(v) == "table" then
+                loop(v)
+            else 
+                  newT[i] = v
+            end
+        end
+    end
+    loop(self)
+    return newT
+end
+
 
 function printf(v)
     local space = ""
