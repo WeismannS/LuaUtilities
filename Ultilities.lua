@@ -19,7 +19,7 @@ function util.concat(self,...)
     end
     for i,t in pairs(tables) do
         for i2,v in pairs(t) do
-            newT[i2] = v
+            util.insert(newT,v)
         end
     end
     return newT
@@ -103,3 +103,4 @@ function printf(v)
     end
     printAll(v)
 end
+
