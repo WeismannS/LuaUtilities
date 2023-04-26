@@ -89,7 +89,7 @@ function printf(v)
 
     local function printAll(v)
         if type(v) ~= "table" then
-            print(space .. tostring(v)..",")
+            print(space .. tostring(v).." ,")
         else
             print(space .. "{")
             space = space .. " "
@@ -112,4 +112,15 @@ function util.length(self)
       return count
 end
 
-
+function string.split(self, delimiter)
+    local newT = {}
+    local from = 1
+    local delim_from, delim_to = string.find(self, delimiter, from)
+    while delim_from do
+        table.insert(newT, string.sub(self, from, delim_from - 1))
+        from = delim_to + 1
+        delim_from, delim_to = string.find(self, delimiter, from)
+    end
+    table.insert(newT,string.sub(self, from))
+    return newT
+end
