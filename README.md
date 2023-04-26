@@ -25,6 +25,8 @@ Adds a Metatable that implements
 printf(<T>)  **--Checks if argument if table and and will print all descendants** 
 (not the best implemenation yet, it's WIP)
 
+### String
+ :split(delimeter)  **Similiar to the javascript counterpart,Devides the string to multiple substrings and returns an array split by the delimeter**
 ## Contributing
 
 Contributions are always very welcome!
