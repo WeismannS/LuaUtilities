@@ -33,7 +33,7 @@ end
 
 function util.find(self,func)
     for i,v in pairs(self) do
-        if func(self[i]) then
+        if func(self[i],i) then
             return v
         end
     end
@@ -72,13 +72,24 @@ function util.values(self,func)
     return newT
 end
 
+function util.clone(t)
+  local newT = T{}
+  for i,v in pairs(t) do
+    if type(v) == "table" then
+      newT[i] = util.clone(v)
+    else
+      newT[i] = v
+    end
+  end
+  return newT
+end
 
 function printf(v)
     local space = ""
 
     local function printAll(v)
         if type(v) ~= "table" then
-            print(space .. tostring(v))
+            print(space .. tostring(v)..",")
         else
             print(space .. "{")
             space = space .. " "
