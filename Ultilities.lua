@@ -2,11 +2,11 @@ util = table
 function T(t)
     return setmetatable(t, {__index = util})
 end
-setreadonly(util,false)
+local _ = setreadonly and setreadonly(util,false)
 function util.map(self,func)
     local newT = T{}
     for i,v in pairs(self) do
-        table.insert(newT,func(e))
+        newT[i] = func(v)
     end
     return newT
 end
