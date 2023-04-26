@@ -1,3 +1,4 @@
+
 # Lua Utilities
 
 Collection of Functions that Lua lack, implemented from javascript, Python..etc...
@@ -16,7 +17,7 @@ Adds a Metatable that implements
 - :concat(<table>...) **returns a new table that contains elements of all the Table arguments provided**
 - :forEach(<F>) **Similiar to how Luau table.foreach() behaves, iterates over the table and runs the provided functions**
 - :map(<F>) **creates a new table populated with the results of calling a provided function on every element in the calling table.**
-  ###
+  
 ### Global
 printf(<T>)  **--Checks if argument if table and and will print all descendants** 
 (not the best implemenation yet, it's WIP)
