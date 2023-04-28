@@ -3,6 +3,7 @@ function T(t)
      return setmetatable(t, {__index = util})
 end
 local _ = setreadonly and setreadonly(util,false)
+local _ = setreadonly and setreadonly(string,false)
 function util.map(self,func)
      local newT = T{}
      for i,v in pairs(self) do
